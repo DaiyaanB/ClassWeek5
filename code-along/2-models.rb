@@ -16,7 +16,38 @@ Company.destroy_all
 
 # 2. insert new rows in companies table
 
+
+new_company = Company.new
+
+new_company["name"] = "Apple"
+new_company["city"] = "Cupertino"
+new_company["state"] = "CA"
+new_company["url"] = "https://www.apple.com"
+new_company.save
+#puts "there are #{Company.all.count} companies"
+#puts new_company.inspect
+
+new_company = Company.new
+
+new_company["name"] = "Amazon"
+new_company["city"] = "Seattle"
+new_company["state"] = "WA"
+new_company.save
+#puts "there are #{Company.all.count} companies"
+#puts new_company.inspect
+
+new_company = Company.new
+new_company["name"] = "Twitter"
+new_company["city"] = "San Francisco"
+new_company["state"] = "CA"
+new_company.save
+#puts "there are #{Company.all.count} companies"
+#puts new_company.inspect
+
 # 3. query companies table to find all row with California company
+
+cali_companies = Company.where({"state" => "CA"})
+puts cali_companies.inspect
 
 # 4. query companies table to find single row for Apple
 
